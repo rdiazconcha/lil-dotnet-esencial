@@ -1,0 +1,24 @@
+﻿<Window x:Class="enlacededatos.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:enlacededatos="clr-namespace:enlacededatos"
+        FontSize="42"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <StackPanel x:Name="panel">
+
+        <StackPanel.Resources>
+            <enlacededatos:Curso x:Key="curso1"
+                                 Nombre=".NET esencial"
+                                 Autor="Rodrigo Díaz Concha" />
+        </StackPanel.Resources>
+        
+        <TextBlock Text="{Binding Nombre, Source={StaticResource curso1}}" />
+        <TextBlock Text="{Binding Autor, Source={StaticResource curso1}}" 
+                   FontSize="24" />
+        <Button Content="Cambiar"
+                Click="Button_Click" />
+    </StackPanel>
+</Window>
